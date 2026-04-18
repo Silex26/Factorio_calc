@@ -103,15 +103,24 @@ if __name__ == "__main__":
 #     components_dict[my_factory].add_recipe('green_science', 1, 1)
 #     components_dict[my_factory].add_recipe('black_science', 1, 1)
 #     components_dict[my_factory].add_recipe('blue_science', 1, 1)
-#     components_dict[my_factory].add_recipe('purple_science', 1, 1)
-    components_dict[my_factory].add_recipe('yellow_science', 5, 1)
+    components_dict[my_factory].add_recipe('purple_science', 1, 1)
+#     components_dict[my_factory].add_recipe('yellow_science', 5, 1)
 #     components_dict[my_factory].add_recipe('white_science', 1, 1)
-  
+
     totals_dict = requirements(components_dict["my_factory"], 1, components_dict)
     
-    for name, val in totals_dict.items():
+#     for name, val in sorted(totals_dict.items(), key=lambda x: -x[1]):
+#         print(f"{name}: {val}")
+#     print()
+
+    for name, val in sorted(totals_dict.items(), key=lambda x: x[0]):
         print(f"{name}: {val}")
     print()
+    
+#     
+#     for name, val in totals_dict.items():
+#         print(f"{name}: {val}")
+#     print()
        
      
     print("=)")

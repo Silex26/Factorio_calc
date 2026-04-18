@@ -89,7 +89,7 @@ for row in csv_list_dict:
 #     st.write(f"{name}: {c_obj.recipe}")
 
 
-st.title("Factorio Calculator =D")
+st.title("Factorio Production Calculator")
 
 
 errors = []
@@ -170,13 +170,14 @@ if st.button("Calculate"):
             my_factory.add_recipe(item, rate, 1)
             st.session_state.calc_result = requirements(my_factory, 1,
                                                         components_dict)
-            
+                                                        
     if st.session_state.calc_result is not None:
         st.subheader("This will require:")            
         for name, val in st.session_state.calc_result.items():
             st.write(f"{name}: {val}")
             
         st.info("This assumes base recipes with no bonuses.")
+        st.caption("No spaghetti belts allowed")
             
             
             
