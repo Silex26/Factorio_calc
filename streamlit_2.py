@@ -2,6 +2,7 @@
 
 import streamlit as st
 import csv
+import os
 
 
 # a graph-like structure for holding connections between components thru recipes
@@ -51,10 +52,12 @@ def requirements(component: Component, amount_needed: float, comp_dict: dict,
     
     return totals
 
-
+# helper function to find file path
+BASE_DIR = os.path.dirname(__file__)
+csv_path = os.path.join(BASE_DIR, "Factorio_recipes_2.csv")
 
 # read csv of recipe data
-csv_list_dict = create_csv_list_dict("Factorio_recipes_2.csv")
+csv_list_dict = create_csv_list_dict(csv_path)
         
 ##Debug
 # for row in csv_list_dict:
